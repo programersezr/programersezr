@@ -9291,7 +9291,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 
 {
-{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV tIMo•𓄹', url = "https://t.me/tt_tt_4"}
+{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV eric•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
 {text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
@@ -9304,7 +9304,7 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'سيزر' or text == 'عبدو' or text == 'sezr' then
 photo = "https://t.me/ttccss"
-local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ ᴘᴀɴᴅᴀ \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
+local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ  \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -9315,11 +9315,11 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'تيمو' or text == 'المبرمج تيمو' or text == 'يا تيمو' then
 photo = "https://t.me/tt_tt_4"
-local Name = 'اهلا بك انا المبرمج تيمو\nممكن تتواصل معي , \من خلال  الزي في الاسفل 𝅘𝅥𝅯 '
+local Name = 'اهلا بك انا المبرمج تيمو'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '˹𓄼•dEV tIMo•𓄹', url = "https://t.me/tt_tt_4"}
+{text = '˹𓄼•dEV eric•𓄹', url = "https://t.me/tt_tt_4"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -12297,7 +12297,7 @@ local TextHelp = [[*
 𓄼 تاك للخولات 𓄹
 ●━○SoUrCE gMR○━●
 𓄼 رفع + تنزيل ⇦ حمار 𓄹
-𓄼 تاك للحمير 𓄹
+?? تاك للحمير 𓄹
 ●━○SoUrCE gMR○━●
 𓄼 رفع + تنزيل ⇦ مزه 𓄹
 𓄼 تاك للمزز 𓄹
