@@ -9413,27 +9413,33 @@ local T =[[
  ━━━━━━━━[⌾](http://t.me/SU_SELVA2)━━━━━━━
 ┇[𝑻𝑯𝑬 𝑩𝑬𝑺𝑻 𝑻𝑬𝑳𝑬𝑮𝑹𝑨𝑴](http://t.me/SU_SELVA2)
  ━━━━━━━━⌾━━━━━━━
+ 
+𓄼• Dev sEZr •:@ttccss
+
+𓄼•dEV TiMo•𓄹: tt_tt_4
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 
 {
-{text = '𝑺𝑰𝒁𝑹', url = "https://t.me/ttccss"},{text = '𝑻𝑰𝑴𝑶', url = "https://t.me/tt_tt_4"}
+{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV TiMo•𓄹', url = "https://t.me/tt_tt_4"}
+},
+{
+{text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
 },
 {
 {text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
-{
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))elseif text == 'سيزر' or text == 'المبرمج سيزر' or text == 'عبدو' then
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+elseif text == 'سيزر' or text == 'المبرمج سيزر' or text == 'عبدو' then
 photo = "https://t.me/ttccss"
 local Name = 'المبرمج سيزر للتواصل معاه اتبع الزر ال في الاسفل ⇓⇑ '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '•𝑺𝑰𝒁𝑹•', url = "https://t.me/ttccss"}
+{text = '•Dev sEZr•', url = "https://t.me/ttccss"}
 },
 {
 {text = '•ɢʀᴏ𝗎ᴘ•', url = "https://t.me/br_selva"},{text = '•ᴄʜᴀɴɴᴇᴛ•', url = "https://t.me/SU_SELVA2"}
