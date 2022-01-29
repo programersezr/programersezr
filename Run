@@ -39,12 +39,12 @@ wget https://luarocks.org/releases/luarocks-3.3.0.tar.gz --no-check-certificate
 tar zxpf luarocks-3.3.0.tar.gz
 cd luarocks-3.3.0
 ./configure && make && sudo make install
- luarocks install luarocks
- luarocks install luasec
- luarocks install luasocket
+sudo luarocks install luarocks
+sudo luarocks install luasec
+sudo luarocks install luasocket
 cd ../..
 rm -rf tmp
-unzip luatele.zip 
+unzip luatele.zip
 sudo lua5.3 eric.lua
 ;;
 2)
