@@ -5664,14 +5664,6 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 end
-endif ban.username then
-Creator = "* ✠ المنشئ -› @"..ban.username.."*\n"
-else
-Creator = " ✠ المنشئ -› *["..ban.first_name.."](tg://user?id="..ban.id..")\n"
-end
-return LuaTele.sendText(msg_chat_id,msg_id,Creator,"md",true)  
-end
-end
 end
 
 
@@ -5764,7 +5756,7 @@ if text == "زواج" or text == "رفع زوجتي" or text == "رفع زوجي
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
 if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عوز يتجوز نفسه 😂*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عوز يتجوز نفسه ??*","md",true)  
 end
 if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
 return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك كلبه غير البوت يبنوسخه 😒*","md",true)  
