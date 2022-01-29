@@ -9441,18 +9441,23 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'سيزر' or text == 'عبدو' or text == 'sezr' then
+elseif text == 'سيزر' or text == 'المبرمج سيزر' or text == 'عبدو' then
 photo = "https://t.me/ttccss"
-local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ ᴘᴀɴᴅᴀ \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
+local Name = 'المبرمج سيزر للتواصل معاه اتبع الزر ال في الاسفل ⇓⇑ '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'Dev sEZr', url = "https://t.me/ttccss"}
+{text = '•𝑺𝑰𝒁𝑹•', url = "https://t.me/ttccss"}
+},
+{
+{text = '•ɢʀᴏ𝗎ᴘ•', url = "https://t.me/br_selva"},{text = '•ᴄʜᴀɴɴᴇᴛ•', url = "https://t.me/SU_SELVA2"}
+},
+{
+{text = '•𝑩𝑶𝑻 𝑺𝑰𝒁𝑻•',url="t.me/Ginbcbot"}
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'تيمو' or text == 'المبرمج تيمو' or text == 'مبرمج السورس' or text == 'عايز سورس' then
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))elseif text == 'تيمو' or text == 'المبرمج تيمو' or text == 'مبرمج السورس' or text == 'عايز سورس' then
 photo = "https://t.me/t_imoo/25"
 local Name = 'المبرمج تيمو للتواصل معاه اتبع الزر ال في الاسفل ⇓⇑ '
 keyboard = {} 
