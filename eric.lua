@@ -9426,7 +9426,7 @@ keyboard.inline_keyboard = {
 {
 {text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
 },
-{==
+{
 {text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
 },
 }
