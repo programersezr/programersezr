@@ -9289,10 +9289,10 @@ keyboard = {}
 keyboard.inline_keyboard = {
 
 {
-{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/abdo'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/dfg'}, 
+{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV eric•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
-{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/ahmed'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/dfg'}, 
+{text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
 },
 {
 {text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
@@ -9323,6 +9323,63 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ┇🦠 هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA2'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ┇🦠 عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '┇🦠❶┇🦠', data = msg.sender.user_id..'/help1'}, {text = '┇🦠❷┇🦠', data = msg.sender.user_id..'/help2'}, 
+},
+{
+{text = '┇🦠❸┇🦠', data = msg.sender.user_id..'/help3'}, {text = '┇🦠❹┇🦠', data = msg.sender.user_id..'/help4'}, 
+},
+{
+{text = '┇🦠❺┇🦠', data = msg.sender.user_id..'/listallAddorrem'}, {text = '┇🦠❻┇🦠', data = msg.sender.user_id..'/NoNextSeting'}, 
+},
+{
+{text = 'SoUrCE gMR', url = 't.me/SU_SELVA2'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+╗•❶• ‹ اوامر المطورين ›
+╣•❷• ‹ اوامر التسليه ›
+╣•❸• ‹ اوامر الاعضاء ›
+╣•❹• ‹ اوامر المسح ›
+╣•❺• ‹ اوامر التفعيل والتعطيل ›
+╝•❻• ‹ اوامر الفتح والقفل ›
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'الالعاب' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ┇🦠 هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA2'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ┇🦠 عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '┇🦠 الالعاب التسليه ┇🦠', data = msg.sender.user_id..'/helma1'}, {text = '┇🦠 الاضافات ┇🦠', data = msg.sender.user_id..'/helma2'}, 
+},
+{
+{text = '┇🦠 الاضافات ┇🦠', data = msg.sender.user_id..'/helma3'}, 
+},
+{
+{text = 'SoUrCE gMR', url = 't.me/SU_SELVA2'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'┇🦠 اليك قسم الالعاب من سورس جمر ┇🦠',"md",false, false, false, false, reply_markup)
+end
+elseif text == 'يا سورسي' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ┇🦠 هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
 end
