@@ -9289,10 +9289,10 @@ keyboard = {}
 keyboard.inline_keyboard = {
 
 {
-{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/help1'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/help2'}, 
+{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV eric•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
-{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/help1'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/help2'}, 
+{text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
 },
 {
 {text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
