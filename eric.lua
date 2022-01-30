@@ -9422,39 +9422,10 @@ keyboard = {}
 keyboard.inline_keyboard = {
 
 {
-{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV TiMo•𓄹', url = "https://t.me/tt_tt_4"}
+{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/help1'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
-},
-{
-{text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-if text == '/start' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/SU_SELVA2"
-Redis:sadd(eric..'eric:Num:User:Pv',msg.sender.user_id)  
-if not msg.ControllerBot then
-if not Redis:get(eric.."eric:Start:Bot") then
-local CmdStart = '*\n ✠ أهلآ بك في بوت '..(Redis:get(eric.."eric:Name:Bot") or "جمر")..
-'\n ✠ اختصاص البوت حماية المجموعات'..
-'\n ✠ لتفعيل البوت عليك اتباع مايلي ...'..
-'\n ✠ اضف البوت الى مجموعتك'..
-'\n ✠ ارفعه ادمن {مشرف}'..
-'\n ✠ ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
-'\n ✠ مطور البوت ⇦ {'..UserSudo..'}*'
-local reply_markup = LuaTele.replyMarkup{
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-
-{
-{text = '𓄼• Dev sEZr •𓄹', url = "https://t.me/ttccss"},{text = '𓄼•dEV TiMo•𓄹', url = "https://t.me/tt_tt_4"}
-},
-{
-{text = '𓄼•Tw sEZr•𓄹', url = "https://t.me/Ginbcbot"}
+{text = '✠اوامر المطورين✠', data = msg.sender.user_id..'/help1'}, {text = '✠اوامر التسليه✠', data = msg.sender.user_id..'/help2'}, 
 },
 {
 {text = '𓄼•WelCoMe SoURcE •𓄹', url = "https://t.me/SU_SELVA2"}
