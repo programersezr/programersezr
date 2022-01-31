@@ -2713,7 +2713,6 @@ keyboard.inline_keyboard = {
 },
 }
 end
-end
 if text == 'الرتبه' or text == 'رتبته'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -2733,10 +2732,17 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n*✠ الرتبه -› '..RinkBot..
 '*',"md",true) 
-end
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
+}
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n✠︙عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
@@ -2773,7 +2779,12 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n✠ ᴛᴘᴅʏʟᴀᴛᴋ -› '..TotalEdit..
 '\n✠ ᴛғᴀᴘʟᴋ -› '..TotalMsgT..
 '*',"md",true) 
-end
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
+}
 end
 if text == 'رتبتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
