@@ -5730,94 +5730,35 @@ LuaTele.sendText(msg_chat_id,msg_id,restricted,"md",true)
 end
 end
 
-if text == 'تاك للكل' then
+if text == "@all" or text == "تاك للكل" or text == "all" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✠ هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA2'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✠ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
-local List_Members = Info_Members.members
-listall = '\n* ✠ قائمه الاعضاء \n●━○𝑺𝑶𝑼𝑹𝑪𝑬 𝑮𝑴𝑹○━●*\n'
-for k, v in pairs(List_Members) do
-local ban = LuaTele.getUser(v.member_id.user_id)
-if ban.username ~= "" then
-listall = listall.."*"..k.." - @"..ban.username.."*\n"
-else
-listall = listall.."*"..k.." -* ["..ban.id.."](tg://user?id="..ban.id..")\n"
+x = 0
+tags = 0
+local list = Info_Members.members
+for k, v in pairs(list) do
+local UserInfo = LuaTele.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then
+tags = x + 5
+listall = ""
 end
+x = x + 1
+if UserInfo.first_name ~= '' then
+listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
 end
+if x == 5 or x == tags or k == 0 then
 LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
 end
-
-if text == "زواج" or text == "رفع زوجتي" or text == "رفع زوجي" and msg.reply_to_message_id ~= 0 then
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عوز يتجوز نفسه ??*","md",true)  
-end
-if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك كلبه غير البوت يبنوسخه 😒*","md",true)  
-end
-if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-local rd_mtzwga = {
-"الا تصلح انت تكون متجوزه 😹",
-"المزه متجوزه مسبقا 😒",
-"عذرا لا تصلح للجواز 😢💔",
-"انها متناكه من قبل عزيزي 😅😂",
-"شوفلك كلبه غير دي 😒😂",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
-else
-local rd_zwag = {
-"تم الزواج مبروك 💑🎊",
-"تم الزواج الف مبروك 🎉🎀",
-"زواجنا مبروكة والحمد لله 🙊💗",
-"تم الزواج من المزه الجامده 💋💞",
-"تم الزواج امتاا الدخله 😅😂",
-}
-if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
-end
-Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
-end
-end
-if text == "طلاق" or text == "تنزيل زوجتي" or text == "تزيل زوجي" and msg.reply_to_message_id ~= 0 then
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"احا هو انت كنت اتجوزت نفسك عشان تطلق","md",true)  
-end
-if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
-return LuaTele.sendText(msg_chat_id,msg_id,"هو احنا كنا اتجوزنا يروح خالتك عشان نطلق","md",true)  
-end
-if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-Redis:srem(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id)
-Redis:sadd(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) 
-local rd_tmtlaq = {
-"تم الطلاق وخربان البيت 😂",
-"تم الطلاق وده الشطان 😹",
-"تم الطلاق بنجاح 😅😂",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
-else
-local rd_tlaq = {
-"لم يتم الجواز من قبل 😹",
-"بايره محدش اتجوزها 😅😂",
-"لم يتم التكاثر من المزه 😂",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
 end
 end
 if text == "تاك للزوجات" or text == "الزوجات" then
-local zwgat_list = Redis:smembers(Timo..msg_chat_id.."zwgat:")
+local zwgat_list = Redis:smembers(eric..msg_chat_id.."zwgat:")
 if #zwgat_list == 0 then 
 return LuaTele.sendText(msg_chat_id,msg_id,'*᪣ لايوجد زوجات*',"md",true) 
 end 
-local zwga_list = "* ᪣ قائمة الزوجات *"..#zwgat_list.."\n*༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻*\n"
+local zwga_list = "* قائمة الزوجات *"..#zwgat_list.."\n*●━○𝑺𝑶𝑼𝑹𝑪𝑬 𝑮𝑴𝑹○━●*\n"
 for k, v in pairs(zwgat_list) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5829,11 +5770,11 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,zwga_list,"md",true) 
 end
 if text == "تاك للمطلقات" or text == "المطلقات" then
-local mutlqat_list = Redis:smembers(Timo..msg_chat_id.."mutlqat:")
+local mutlqat_list = Redis:smembers(eric..msg_chat_id.."mutlqat:")
 if #mutlqat_list == 0 then 
 return LuaTele.sendText(msg_chat_id,msg_id,'*᪣ لايوجد مطلقات*',"md",true) 
 end 
-local mutlqa_list = "* ᪣ قائمة المطلقات *"..#mutlqat_list.."\n*༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻*\n"
+local mutlqa_list = "* قائمة المطلقات *"..#mutlqat_list.."\n*●━○𝑺𝑶𝑼𝑹𝑪𝑬 𝑮𝑴𝑹○━●*\n"
 for k, v in pairs(mutlqat_list) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -9534,6 +9475,66 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'✠ اليك قسم الالعاب من سورس جمر ✠',"md",false, false, false, false, reply_markup)
+end
+if text == "زواج" or text == "رفع زوجتي" or text == "رفع زوجي" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عوز يتجوز نفسه ??*","md",true)  
+end
+if tonumber(Message_Reply.sender.user_id) == tonumber(eric) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك كلبه غير البوت يبنوسخه 😒*","md",true)  
+end
+if Redis:sismember(eric..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+local rd_mtzwga = {
+"الا تصلح انت تكون متجوزه 😹",
+"المزه متجوزه مسبقا 😒",
+"عذرا لا تصلح للجواز 😢💔",
+"انها متناكه من قبل عزيزي 😅😂",
+"شوفلك كلبه غير دي 😒😂",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+else
+local rd_zwag = {
+"تم الزواج مبروك 💑🎊",
+"تم الزواج الف مبروك 🎉🎀",
+"زواجنا مبروكة والحمد لله 🙊💗",
+"تم الزواج من المزه الجامده 💋💞",
+"تم الزواج امتاا الدخله 😅😂",
+}
+if Redis:sismember(eric..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
+Redis:srem(eric..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+end
+Redis:sadd(eric..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+end
+end
+if text == "طلاق" or text == "تنزيل زوجتي" or text == "تزيل زوجي" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"احا هو انت كنت اتجوزت نفسك عشان تطلق","md",true)  
+end
+if tonumber(Message_Reply.sender.user_id) == tonumber(eric) then
+return LuaTele.sendText(msg_chat_id,msg_id,"هو احنا كنا اتجوزنا يروح خالتك عشان نطلق","md",true)  
+end
+if Redis:sismember(eric..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+Redis:srem(eric..msg_chat_id.."zwgat:",Message_Reply.sender.user_id)
+Redis:sadd(eric..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) 
+local rd_tmtlaq = {
+"تم الطلاق وخربان البيت 😂",
+"تم الطلاق وده الشطان 😹",
+"تم الطلاق بنجاح 😅😂",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
+else
+local rd_tlaq = {
+"لم يتم الجواز من قبل 😹",
+"بايره محدش اتجوزها 😅😂",
+"لم يتم التكاثر من المزه 😂",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
+end
 end
 if text == 'هاي' or text == 'هيي' then
 if not Redis:get(eric.."eric:Sasa:Jeka"..msg_chat_id) then
