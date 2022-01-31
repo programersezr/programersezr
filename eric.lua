@@ -2671,8 +2671,6 @@ end
 end
 end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
 if ban.username then
@@ -2706,12 +2704,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n✠ ᴛᴘᴅʏʟᴀᴛᴋ -› '..TotalEdit..
 '\n✠ ᴛғᴀᴘʟᴋ -› '..TotalMsgT..
 '*',"md",true) 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SU_SELVA"}
-},
-}
+end
 end
 if text == 'الرتبه' or text == 'رتبته'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -2732,12 +2725,7 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n*✠ الرتبه -› '..RinkBot..
 '*',"md",true) 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SU_SELVA"}
-},
-}
+end
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
@@ -2779,12 +2767,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n✠ ᴛᴘᴅʏʟᴀᴛᴋ -› '..TotalEdit..
 '\n✠ ᴛғᴀᴘʟᴋ -› '..TotalMsgT..
 '*',"md",true) 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SU_SELVA"}
-},
-}
+end
 end
 if text == 'رتبتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -8844,7 +8827,7 @@ db = "ملف ✠"
 elseif Redis:get(eric.."eric:Add:Rd:Manager:Audio"..v..msg_chat_id) then
 db = "اغنيه 🎵"
 elseif Redis:get(eric.."eric:Add:Rd:Manager:video_note"..v..msg_chat_id) then
-db = "بصمه فيديو 🎥"
+db = "بصمه فيديو ??"
 end
 text = text..""..k.." » {"..v.."} » {"..db.."}\n"
 end
