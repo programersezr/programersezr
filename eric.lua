@@ -11080,7 +11080,7 @@ end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id ~= 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA2'},
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup),
 end
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙ هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
