@@ -114,7 +114,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,1825532106,5217455708,34563}  
+local ListSudos ={Sudo_Id,1825532106,5217455708,2042690935}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -137,7 +137,7 @@ if UserId == 1825532106 then
 Status = 'المبرمج سيزر'
 elseif UserId == 5217455708 then  
 Status = 'مبرمج السورس'
-elseif UserId == 34563 then  
+elseif UserId == 2042690935 then  
 Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -722,7 +722,7 @@ if UserId == 1825532106 then
 Status = true
 elseif UserId == 5217455708 then  
 Status = true
-elseif UserId == 34563 then  
+elseif UserId == 2042690935 then  
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -763,7 +763,7 @@ if UserId == 1825532106 then
 Status = true
 elseif UserId == 5217455708 then    
 Status = true
-elseif UserId == 34563 then    
+elseif UserId == 2042690935 then    
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -903,7 +903,7 @@ msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5217455708 then
 msg.Name_Controller = 'مبرمج السورس'
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 34563 then
+elseif tonumber(msg.sender.user_id) == 2042690935 then
 msg.Name_Controller = 'مطور السورس'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -9302,7 +9302,7 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'سيزر' or text == 'عبدو' or text == 'sezr' then
 photo = "https://t.me/ttccss"
-local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ ᴘᴀɴᴅᴀ \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
+local Name = 'سيزر '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -9379,7 +9379,7 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'┇🦠 اليك قسم الالعاب من سورس جمر ┇🦠',"md",false, false, false, false, reply_markup)
 end
-elseif text == 'يا سورسي' then
+elseif text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ┇🦠 هاذا الامر يخص 『 '..Controller_Num(7)..' 』* ',"md",true)  
 end
@@ -9436,6 +9436,7 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'┇🦠 اليك قسم الالعاب من سورس جمر ┇🦠',"md",false, false, false, false, reply_markup)
 end
+
 if text == 'هاي' or text == 'هيي' then
 if not Redis:get(eric.."eric:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
