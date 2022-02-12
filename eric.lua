@@ -114,7 +114,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,1825532106,5217455708,34563}  
+local ListSudos ={Sudo_Id,1974435183,5217455708,34563}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -133,8 +133,8 @@ Managers = Redis:sismember(eric.."eric:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(eric.."eric:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."eric:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 1825532106 then
-Status = 'المبرمج سيزر'
+if UserId == 1974435183 then
+Status = 'المبرمج ريشا'
 elseif UserId == 5217455708 then  
 Status = 'مبرمج السورس'
 elseif UserId == 34563 then  
@@ -718,7 +718,7 @@ Managers = Redis:sismember(eric.."eric:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(eric.."eric:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."eric:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 1825532106 then
+if UserId == 1974435183 then
 Status = true
 elseif UserId == 5217455708 then  
 Status = true
@@ -759,7 +759,7 @@ Managers = Redis:sismember(eric.."eric:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(eric.."eric:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."eric:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 1825532106 then
+if UserId == 1974435183 then
 Status = true
 elseif UserId == 5217455708 then    
 Status = true
@@ -897,8 +897,8 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 1825532106 then
-msg.Name_Controller = 'المبرمج سيزر'
+if tonumber(msg.sender.user_id) == 1974435183 then
+msg.Name_Controller = 'المبرمج ريشا'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5217455708 then
 msg.Name_Controller = 'مبرمج السورس'
@@ -2376,7 +2376,7 @@ for Name_User in string.gmatch(ban.first_name, "[^%s]+" ) do
 ban.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(eric.."eric:Name:Bot") or "جمر")
+NamesBot = (Redis:get(eric.."eric:Name:Bot") or "ريشا")
 Groups = (Redis:scard(eric..'eric:ChekBotAdd') or 0)
 Users = (Redis:scard(eric..'eric:Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -4446,7 +4446,7 @@ end
 if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع حظر عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج سيزر' then
+if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج ريشا' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع حظر عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
 if Redis:sismember(eric.."eric:BanAll:Groups",UserId_Info.id) then
@@ -4512,7 +4512,7 @@ end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج سيزر' then
+if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج ريشا' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then
@@ -4903,7 +4903,7 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مطور السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع حظر عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج سيزر' then
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج ريشا' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع حظر عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
 if Redis:sismember(eric.."eric:BanAll:Groups",Message_Reply.sender.user_id) then
@@ -4963,7 +4963,7 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج سيزر' then
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج ريشا' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مطور السورس' then
@@ -5318,7 +5318,7 @@ end
 if Controller(msg_chat_id,UserId) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId).." 』*","md",true)  
 end
-if Controller(msg_chat_id,UserId) == 'المبرمج سيزر' then
+if Controller(msg_chat_id,UserId) == 'المبرمج ريشا' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*  ✠ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId).." 』*","md",true)  
 end
 if Controller(msg_chat_id,UserId) == 'مطور السورس' then
@@ -9433,9 +9433,9 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'سيزر' or text == 'المبرمج سيزر' or text == 'عبدو' then
+elseif text == 'ريشا' or text == 'المبرمج ريشا' or text == 'عبدو' then
 photo = "https://t.me/ttccss"
-local Name = 'المبرمج سيزر للتواصل معاه اتبع الزر ال في الاسفل ⇓⇑ '
+local Name = 'المبرمج ريشا للتواصل معاه اتبع الزر ال في الاسفل ⇓⇑ '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -9534,7 +9534,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'✠ اليك قسم الالعاب من سورس جمر ✠',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'✠ اليك قسم الالعاب من سورس ريشا ✠',"md",false, false, false, false, reply_markup)
 end
 if text == 'هاي' or text == 'هيي' then
 if not Redis:get(eric.."eric:Sasa:Jeka"..msg_chat_id) then
@@ -10236,7 +10236,7 @@ for Name_User in string.gmatch(ban.first_name, "[^%s]+" ) do
 ban.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(eric.."eric:Name:Bot") or "جمر")
+local NamesBot = (Redis:get(eric.."eric:Name:Bot") or "ريشا")
 local BotName = {
 'اسمي '..NamesBot..' يا قلبي 😍💜',
 'اسمي '..NamesBot..' يا روحي 🙈❤️',
@@ -10265,14 +10265,14 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(eric.."eric:Name:Bot") or "جمر") then
+if text == (Redis:get(eric.."eric:Name:Bot") or "ريشا") then
 local photo = LuaTele.getUserProfilePhotos(eric)
 local ban = LuaTele.getUser(eric)
 for Name_User in string.gmatch(ban.first_name, "[^%s]+" ) do
 ban.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(eric.."eric:Name:Bot") or "جمر")
+local NamesBot = (Redis:get(eric.."eric:Name:Bot") or "ريشا")
 local BotName = {
 'نعم يروحي 🌝💙',
 'نعم يا قلب '..NamesBot..'',
@@ -10406,7 +10406,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس جمر؟ ", 
+"ما هيا عيوب سورس ريشا؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -10422,13 +10422,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس جمر؟؟ ", 
+" هل يعجبك سورس ريشا؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس جمر؟ ", 
+"اي رايك في سورس ريشا؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " آخر مره ضربت عشره كانت متى ؟", 
@@ -10584,7 +10584,7 @@ local texting = {"اخر افلام شاهدتها",
   "الصداقة ولا الحب؟ ",
 "الصداقة ولا الحب؟ ",
   "الغيرة الزائدة شك؟ ولا فرط الحب؟ ",
-    "هل انت دي تويت باعت سيزر؟ ",
+    "هل انت دي تويت باعت ريشا؟ ",
   "قد حبيت شخصين مع بعض؟ وانقفطت؟ ",
   "وش أخر شي ضيعته؟ ",
   "قد ضيعت شي ودورته ولقيته بيدك؟ ",
@@ -10642,7 +10642,7 @@ local texting = {"اخر افلام شاهدتها",
 "تتوقع إنك بتتزوج اللي تحبه؟ ",
   "ما هو أمنيتك؟ ",
   "وين تشوف نفسك بعد خمس سنوات؟ ",
-  "هل انت حرامي تويت بتعت سيزر؟ ",
+  "هل انت حرامي تويت بتعت ريشا؟ ",
   "لو خيروك تقدم الزمن ولا ترجعه ورا؟ ",
   "لعبة قضيت وقتك فيه بالحجر المنزلي؟ ",
   "تحب تطق الميانة ولا ثقيل؟ ",
@@ -10650,7 +10650,7 @@ local texting = {"اخر افلام شاهدتها",
   "اول ماتصحى من النوم مين تكلمه؟ ",
   "عندك الشخص اللي يكتب لك كلام كثير وانت نايم؟ ",
   "قد قابلت شخص تحبه؟ وولد ولا بنت؟ ",
-   "هل انت تحب سيزر؟ ",
+   "هل انت تحب ريشا؟ ",
 "اذا قفطت احد تحب تفضحه ولا تستره؟ ",
   "كلمة للشخص اللي يسب ويسطر؟ ",
   "آية من القران تؤمن فيه؟ ",
@@ -10662,7 +10662,7 @@ local texting = {"اخر افلام شاهدتها",
   "اذكر موقف ماتنساه بعمرك؟ ",
   "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
   "ألطف شخص مر عليك بحياتك؟ ",
-   "هل سيزر لطيف؟ ",
+   "هل ريشا لطيف؟ ",
 "انت من الناس المؤدبة ولا نص نص؟ ",
   "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
   "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
@@ -10691,7 +10691,7 @@ local texting = {"اخر افلام شاهدتها",
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي سيزر ناك اليكس؟ ",
+   "لي ريشا ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
@@ -11324,7 +11324,7 @@ if text == '/start' then
 Redis:sadd(eric..'eric:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 if not Redis:get(eric.."eric:Start:Bot") then
-local CmdStart = '*\n ✠ أهلآ بك في بوت '..(Redis:get(eric.."eric:Name:Bot") or "جمر")..
+local CmdStart = '*\n ✠ أهلآ بك في بوت '..(Redis:get(eric.."eric:Name:Bot") or "ريشا")..
 '\n ✠ اختصاص البوت حماية المجموعات'..
 '\n ✠ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n ✠ اضف البوت الى مجموعتك'..
@@ -11358,7 +11358,7 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(eric.."eric:Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 else
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = LuaTele.replyMarkup{type = 'inline',resize = true,is_personal = true,
 data = {
 {
 {text = '『 تفعيل التواصل 』',type = 'text'},{text = '『 تعطيل التواصل 』', type = 'text'},
