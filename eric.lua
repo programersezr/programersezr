@@ -11653,6 +11653,28 @@ name = string.gsub(name,"هادئ","عصبي")
 return LuaTele.sendText(msg_chat_id,msg_id,"𖥔 اسرع واحد يدز العكس ~ {"..name.."}","md",true)  
 end
 end
+if text == "لعبوني" or text == "مميزات" then   
+if Redis:get(eric.."Status:Games"..msg.chat_id) then 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تويت', data = '/Haiw7'}, {text = 'استوري', data = '/Haiw8'}, 
+},
+{
+{text = 'تويت', data = '/Haiw7'}, {text = 'استوري', data = '/Haiw8'}, 
+},
+{
+{text = 'تويت', data = '/Haiw7'}, {text = 'استوري', data = '/Haiw8'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+.♥️مرحبا بك يصديقي في
+.♥️مميزات سورس سيلفا بروو
+*]],"md",false, false, false, false, reply_markup)
+end
+end
 if text == "بات" or text == "محيبس" then   
 if Redis:get(eric.."Status:Games"..msg.chat_id) then 
 local reply_markup = LuaTele.replyMarkup{
