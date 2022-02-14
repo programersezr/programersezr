@@ -6210,41 +6210,6 @@ data = {
 }
 LuaTele.sendText(1804133252,0,'*\n𖥔 مرحباً عزيزي المبرمج باندا \nشخص ما يحتاج الي مساعده\nꔹ━━━━━ꔹ𝐅𝐈𝐑𝐄ꔹ━━━━━ꔹ\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(eric.."id:HELPBEVQ:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local banyt = JSON.decode(urrl)
-local name = ' '..banyt.result.first_name..' '
-if banyt.result.username then
-apapiy = ' '..banyt.result.username..' '
-else
-apapiy = 'sasa_boody'
-end
-if banyt.result.first_name then
-klajq = ' '..banyt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n 𖥔*Dev Name* : "..banyt.result.first_name.." \n"
-keybanyt = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..banyt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keybanyt))
-else
-local TestT = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n 𖥔*HELP NAME* :  "..banyt.result.first_name.." \n"
-keyboardd = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 if text == "غنيلي" then
 local t = "اليك اغنيه عشوائيه من البوت"
 Num = math.random(8,83)
