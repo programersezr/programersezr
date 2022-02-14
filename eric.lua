@@ -164,7 +164,7 @@ return var
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,1804133252,5040650961,2078351596,2112,2178}  
+local ListSudos ={Sudo_Id,1825532106,5040650961}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -185,15 +185,9 @@ Addictive = Redis:sismember(eric.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 667 then
-Status = 'المبرمج باندا' 
+Status = 'المبرمج سيزر' 
 elseif tonumber(UserId) == 6676then
 Status = ' لا يوجد'
-elseif tonumber(UserId) == 1804133252  then
-Status = 'المبرمج باندا'
-elseif tonumber(UserId) == 2178 then
-Status = 'no NEM'
-elseif tonumber(UserId) == 2112 then
-Status = 'نو نيم'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == eric then
@@ -770,7 +764,7 @@ Managers = Redis:sismember(eric.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(eric.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 1804133252 then
+if tonumber(UserId) == 1825532106 then
 Status = true
 elseif tonumber(UserId) == 2112 then
 Status = true
@@ -820,7 +814,7 @@ Managers = Redis:sismember(eric.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(eric.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(eric.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 1804133252 then
+if tonumber(UserId) == 1825532106 then
 Status = true
 elseif tonumber(UserId) == 667 then
 Status = true
@@ -996,20 +990,8 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 667 then
-msg.Name_Controller = 'المبرمج لا يوجد'
-msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 2112 then
-msg.Name_Controller = 'نو نيم '
-msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 6676then
-msg.Name_Controller = 'مبرمج السورس '
-msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 2178 then
-msg.Name_Controller = 'no NEM '
-msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1804133252 then
-msg.Name_Controller = 'المبرمج باندا '
+if tonumber(msg.sender.user_id) == 1825532106 then
+msg.Name_Controller = 'المبرمج سيزر'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -5619,7 +5601,7 @@ end
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*◐ عذرآ لا تستطيع استخدام الامر على 「 "..Controller(msg_chat_id,UserId).." 」 *","md",true)  
 end
-if UserId == "1804133252" then
+if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*◐ عذرآ لا تستطيع استخدام الامر على المطور حودا *","md",true)  
 end
 if UserId == "1321722045" then
@@ -5656,7 +5638,7 @@ local UserId = text:match('^كتم عام (%d+)$')
 if not msg.DevelopersQ then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*◐ هاذا الامر يخص「 '..Controller_Num(2)..' 」* ',"md",true)  
 end
-if UserId == "1804133252" then
+if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*◐ عذرآ لا تستطيع استخدام الامر على المطور حودا *","md",true)  
 end
 if UserId == "1321722045" then
@@ -6114,8 +6096,8 @@ end
 
 
 
-if text == 'المبرمج باندا' or text == 'باندا' or text == 'المبرمج' then  
-local UserId_Info = LuaTele.searchPublicChat("Q_o_ll")
+if text == 'المبرمج سيزر' or text == 'سيزر' or text == 'المبرمج' then  
+local UserId_Info = LuaTele.searchPublicChat("ttccss")
 if UserId_Info.id then
 local  ban = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -6131,21 +6113,21 @@ Creat = " Developers FIRE\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  ❲ eric  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ SELVA Copy Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers eric  >', url = "https://t.me/Q_o_ll"}
+{text = '< Developers eric  >', url = "https://t.me/ttccss"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ❲ eric  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ SELVA Copy Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers eric  >', url = "https://t.me/Q_o_ll"}
+{text = '< Developers eric  >', url = "https://t.me/ttccss"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -6182,7 +6164,7 @@ data = {
 }
 LuaTele.sendText(Sudo_Id,0,'*\n𖥔 مرحباً عزيزي المطور \nشخص ما يحتاج الي مساعده\n⩹━━━━𖥕eric𖥕━━━━⩺\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'المبرمج باندا' or text == 'باندا' or text == 'المبرمج' then  
+if text == 'المبرمج سيزر' or text == 'سيزر' or text == 'المبرمج' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 local bains = LuaTele.getUser(msg.sender.user_id)
@@ -6208,7 +6190,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(1804133252,0,'*\n𖥔 مرحباً عزيزي المبرمج باندا \nشخص ما يحتاج الي مساعده\nꔹ━━━━━ꔹ𝐅𝐈𝐑𝐄ꔹ━━━━━ꔹ\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(1825532106,0,'*\n𖥔 مرحباً عزيزي المبرمج سيزر \nشخص ما يحتاج الي مساعده\nꔹ━━━━━ꔹ𝐅𝐈𝐑𝐄ꔹ━━━━━ꔹ\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == "غنيلي" then
 local t = "اليك اغنيه عشوائيه من البوت"
@@ -10799,8 +10781,8 @@ local texting = {"اخر افلام شاهدتها",
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليه باندا جدع؟ ", 
- "ليه باندا جدع؟ ", 
+"ليه سيزر جدع؟ ", 
+ "ليه سيزر جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -11049,7 +11031,7 @@ local texting = {"اخر افلام شاهدتها",
   "اذكر موقف ماتنساه بعمرك؟ ",
   "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
   "ألطف شخص مر عليك بحياتك؟ ",
-   "هل باندا لطيف؟ ",
+   "هل سيزر لطيف؟ ",
 "انت من الناس المؤدبة ولا نص نص؟ ",
   "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
   "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
@@ -11078,7 +11060,7 @@ local texting = {"اخر افلام شاهدتها",
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي باندا ناك اليكس؟ ",
+   "لي سيزر ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
@@ -11106,6 +11088,20 @@ local texting = {"اخر افلام شاهدتها",
   "عادي تتزوج من برا القبيلة؟ ",
   "أجمل شي بحياتك وش هو؟ ",
 } 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+return LuaTele.sendText(msg_chat_id,msg_id, texting[math.random(#texting)],'md', false, false, false, false, reply_markup)
+end
+end
+if text == "لعبتي" or text == "ممكن العب" or text == "لعبوني" then
+if Redis:get(eric.."Status:Games"..msg.chat_id) then
+local texting = {"مرحبا بك في مميزات السورس", 
+} 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'تويت آخرا -', data = msg.sender.user_id..'/Haiw7'}, },}}
 return LuaTele.sendText(msg_chat_id,msg_id, texting[math.random(#texting)],'md', false, false, false, false, reply_markup)
 end
@@ -11943,7 +11939,7 @@ data = {
 {text = 'المبرمج مصطفي',type = 'text'},{text = 'المطور',type = 'text'},
 },
 {
-{text = 'المبرمج باندا',type = 'text'},{text = 'المبرمج بودي',type = 'text'},
+{text = 'المبرمج سيزر',type = 'text'},{text = 'المبرمج بودي',type = 'text'},
 },
 {
 {text = 'المساعد',type = 'text'},
@@ -12029,7 +12025,7 @@ data = {
 {text = 'المبرمج مصطفي',type = 'text'},{text = 'المطور',type = 'text'},
 },
 {
-{text = 'المبرمج باندا',type = 'text'},{text = 'المبرمج بودي',type = 'text'},
+{text = 'المبرمج سيزر',type = 'text'},{text = 'المبرمج بودي',type = 'text'},
 },
 {
 {text = 'المساعد',type = 'text'},
@@ -12226,7 +12222,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  ❲ eric  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ SELVA Copy Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -12261,7 +12257,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  ❲ eric  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ SELVA Copy Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13290,8 +13286,8 @@ local texting = {"اخر افلام شاهدتها",
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليه باندا جدع؟ ", 
- "ليه باندا جدع؟ ", 
+"ليه سيزر جدع؟ ", 
+ "ليه سيزر جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -13540,7 +13536,7 @@ local texting = {"اخر افلام شاهدتها",
   "اذكر موقف ماتنساه بعمرك؟ ",
   "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
   "ألطف شخص مر عليك بحياتك؟ ",
-   "هل باندا لطيف؟ ",
+   "هل سيزر لطيف؟ ",
 "انت من الناس المؤدبة ولا نص نص؟ ",
   "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
   "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
@@ -13569,7 +13565,7 @@ local texting = {"اخر افلام شاهدتها",
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي باندا ناك اليكس؟ ",
+   "لي سيزر ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
